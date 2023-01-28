@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package books;
+
+// The greeting service definition.
+service BookStorage {
+  // Sends a greeting
+  rpc LoadAllBooks (LoadRequest) returns (LoadResponse);
+}
+
+// The request message containing the user's name.
+message LoadRequest {
+  string author = 1;
+}
+
+// The response message containing the greetings.
+message LoadResponse {
+ repeated string books = 1;
+}
